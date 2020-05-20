@@ -1,16 +1,14 @@
 require_relative "../lib/scraper.rb"
 require_relative "../lib/show.rb"
 require 'nokogiri'
-require 'colorize'
 
 class BrdwayCLI
 
 class InputError < StandardError
-        def message
-          puts ”please provide a valid entry”
-        end
-      end
+    def message
+      puts "please provide a valid entry"
     end
+end
 
 def run
     make_shows
@@ -22,35 +20,36 @@ def make_shows
     #it returns the nokogiri object(array thing)
     shows_array = Scraper.scrape_mainpage
     #this creates the student instances with the following attributes: :name, :location, :profile_url
-    Show.create_from_collection(show_array)
+    Show.create_from_collection(shows_array)
   end
 
 
   def call_it
     input = ""
     while input != "exit"
-      puts "Welcome to your Broadway Discount Finder: Cheap Ticket Policies for Broadway Shows!”
-      puts "To get a list of all current and upcoming broadway shows, enter ‘all shows’.”
-      puts “To get discount information for a specific show, enter ‘discount’.”
-      puts "To quit, type 'exit'."
+      puts "Welcome to your Broadway Discount Finder: Cheap Ticket Policies for Broadway Shows!"
+      puts "To get a list of all current and upcoming broadway shows, enter 'all shows.'"
+      puts "To get discount information for a specific show, enter 'discount'."
+      puts "To quit, type exit."
       puts "What would you like to do?"
       input = gets.strip
 
       case input
-      when “all shows”
+      when "all shows"
         list_shows
-      when “discount”
+      when "discount"
         print_discount
-      when input != (“all shows” || “discount” || “exit”)
+      when "exit"
+        return
+      else
           begin
             raise InputError
           rescue InputError => error
-              puts error.message
+            error.message
           end
       end
     end
   end
-    
 
 
   def list_shows
@@ -60,15 +59,17 @@ def make_shows
       puts "#{newnum}. #{show.name}"
     end
   end
-  
 
   def print_discount
-    puts "Which show would you like to see? Type its corresponding number.”
+    list_shows
+    puts "Which show would you like to see? Type its corresponding number."
     list_of_shows = Show.all.sort{ |a, b| a.name <=> b.name }
     input = gets.strip.to_i
     if (1..Show.all.length).include?(input)
       show = list_of_shows[input-1]
-      puts "#{show.name} discounts: #{show.discount}”
+      puts "#{show.name} discounts: #{show.discount}"
+    else
+      puts "Wrong input.  Please try again."
     end
   end
 
