@@ -13,9 +13,9 @@ class Scraper
     		names_discounts[:discount] = cells[6].text.gsub("\n","").strip unless cells[6].nil?
     		names_discounts
   	  end
-
-  	plays.delete_if { |e| e.empty? || e[:name].empty? }
-  	plays.shift # removes the first element
+    #text cleanup below
+  	plays.delete_if { |e| e.empty? || e[:name].empty? } #removes random empty hashes
+  	plays.shift #removes the first element, which we don't need
   	return plays
   end
 
