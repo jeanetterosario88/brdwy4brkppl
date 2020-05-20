@@ -1,3 +1,8 @@
 #!/usr/bin/env ruby
 
-puts "Hello World"
+#require_relative "./brdwy4brkppl/lib/brdwy4brkppl/version"
+require_relative "../lib/brdwycli"
+require_relative "../lib/scraper"
+require_relative "../lib/show"
+
+BrdwayCLI.new.run
