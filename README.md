@@ -2,10 +2,10 @@
 Welcome to Broadway For Broke People! This gem was developed to help users explore the costs of discounted Broadway tickets through a command line interface. This gem allows the user to view a list of every Broadway show currently playing New York City and pull up a list of ticket discount policies.
 
 ### Installation
-  Or install it yourself as:
+  Add this line to your application's Gemfile::
 
-    $ gem brdwy4brkppl
-  Or then execute: 
+    $ gem 'brdwy4brkppl'
+  And then execute: 
 
     $ bundle
     
@@ -23,7 +23,7 @@ To install this gem onto your local machine, run bundle exec rake install. To re
 
 ### Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/jeanetterosario88/confessional.git Contributors are expected to adhere to the Contributor Covenant code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/jeanetterosario88/brdwy4brkppl.git Contributors are expected to adhere to the Contributor Covenant code of conduct.
 
 ### License
 
