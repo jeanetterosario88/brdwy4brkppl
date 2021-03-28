@@ -2,15 +2,16 @@
 Welcome to Broadway For Broke People! This gem was developed to help users explore the costs of discounted Broadway tickets through a command line interface. This gem allows the user to view a list of every Broadway show currently playing New York City and pull up a list of ticket discount policies.
 
 ### Installation
-Add this line to your application's Gemfile:
+  Or install it yourself as:
 
-gem 'brdwy4brkppl'
-And then execute:
+    $ gem brdwy4brkppl
+  Or then execute: 
 
-  $ bundle
-Or install it yourself as:
+    $ bundle
+    
+  Or install it yourself as:
 
-  $ gem install brdwy4brkppl
+    $ gem install brdwy4brkppl
 
 ### Usage
 Execute the bin file './bin/brdwy4brkppl'. You will be prompted with a list of the Broadway shows in New York City. You can enter the corresponding number for any show to pull up that the ticket discount policy.
