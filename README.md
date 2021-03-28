@@ -7,10 +7,10 @@ Add this line to your application's Gemfile:
 gem 'brdwy4brkppl'
 And then execute:
 
-$ bundle
+  $ bundle
 Or install it yourself as:
 
-$ gem install brdwy4brkppl
+  $ gem install brdwy4brkppl
 
 ### Usage
 Execute the bin file './bin/brdwy4brkppl'. You will be prompted with a list of the Broadway shows in New York City. You can enter the corresponding number for any show to pull up that the ticket discount policy.
